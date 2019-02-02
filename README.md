@@ -3,7 +3,7 @@
 # LTV on GCE
 > Additional information or tagline
 
-Scripts to pull data from various sources for SUMO.
+Scripts to LTV calculations on GCE.
 
 ## Installing / Getting started
 
