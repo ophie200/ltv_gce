@@ -52,3 +52,10 @@ def calc_alive_prob(row, model):
     r = row['recency']
     t = row['T']
     return model.conditional_probability_alive(f,r,t)
+
+# need to update this function so it takes bgf, ggf, input_data and appends to bq 
+def process_chunk(output, group):
+    name = multiprocessing.current_process().name
+    logger = logging.getLogger("ltv/{}".format(name))
+    try:
+    logger.debug("Processing a chunk to {}".format(output))
