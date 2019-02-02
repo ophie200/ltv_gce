@@ -23,7 +23,7 @@ setup(name='ltv-gce',
           'pandas',
           'scipy',
           'google-cloud-logging',
-          'google-cloud-storage'
+          'google-cloud-bigquery[pandas,pyarrow]'
       ],
       test_suite='nose.collector',
       tests_require=['nose', 'nose-cover3'],
