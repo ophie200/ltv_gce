@@ -1,4 +1,4 @@
-![LTV logo](https://github.com/ophie200/sumo/blob/master/images/LTV-logo.png)
+![LTV logo](https://github.com/ophie200/sumo/blob/master/images/Mozilla-logo.png)
 
 # LTV on GCE
 > Additional information or tagline
