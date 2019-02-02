@@ -15,7 +15,7 @@ setup(name='ltv-gce',
       author='Nancy Wong',
       author_email='nawong@mozilla.com',
       license='...',
-      packages=['SurveyGizmo'],
+      packages=['LTV_GCE'],
       install_requires=[
           'Lifetimes',
           'dill',
