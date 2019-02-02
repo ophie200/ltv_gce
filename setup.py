@@ -15,7 +15,7 @@ setup(name='ltv-gce',
       author='Nancy Wong',
       author_email='nawong@mozilla.com',
       license='...',
-      packages=['LTV_GCE'],
+      packages=['ltv_gce'],
       install_requires=[
           'Lifetimes',
           'dill',
@@ -28,7 +28,7 @@ setup(name='ltv-gce',
       test_suite='nose.collector',
       tests_require=['nose', 'nose-cover3'],
       entry_points={
-          'console_scripts': ['run-ltv-gce=LTV-GCE.ltv_calc:main'],
+          'console_scripts': ['run-ltv-gce=ltv-gce.ltv_calc:main'],
       },
       include_package_data=True,
 zip_safe=False)
