@@ -1,11 +1,12 @@
-
+from datetime import date, timedelta, datetime
+from collections import namedtuple
+import humanize
 import pandas as pd
+import numpy as np
 from lifetimes import BetaGeoFitter
 from lifetimes import GammaGammaFitter
 
 from google.cloud import bigquery
-
-from google.cloud import storage
 
 import google.cloud.logging
 
@@ -19,6 +20,9 @@ import logging
 logging.info('start logging')
 logger = logging.getLogger(__name__)
 
+CONCURRENCY=8
+CHUNK_SIZE=250000
+write_lock = multiprocessing.Lock()
 
 def estimate_clv_model(summary, model_penalizer=None):
   #set default values if they are not stated
@@ -40,3 +44,11 @@ def estimate_clv_model(summary, model_penalizer=None):
     bgf.fit(summary_with_value_and_returns['frequency'],summary_with_value_and_returns['recency'],summary_with_value_and_returns['T'])
 
   return [bgf, ggf]
+
+
+# Will need later for calculating the alive probability of a customer
+def calc_alive_prob(row, model):
+    f = row['frequency']
+    r = row['recency']
+    t = row['T']
+    return model.conditional_probability_alive(f,r,t)
